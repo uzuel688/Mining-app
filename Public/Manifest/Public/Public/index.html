@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#667eea">
+  <meta name="description" content="Production de crypto ultra-rapide gratuit - Mining faucet">
+  <meta name="keywords" content="crypto, mining, bitcoin, ethereum, gratuit">
+  <meta name="author" content="Crypto Mining">
+  
+  <title>⛏️ Crypto Mining - Ultra Rapide & Gratuit</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><text y='32' font-size='32'>⛏️</text></svg>">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><rect fill='%23667eea' width='180' height='180'/><text x='90' y='90' font-size='120' fill='white' text-anchor='middle' dominant-baseline='middle'>⛏️</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script>
+    // Register Service Worker pour PWA
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .then(registration => {
+            console.log('✅ Service Worker registered:', registration);
+          })
+          .catch(error => {
+            console.error('❌ Service Worker registration failed:', error);
+          });
+      });
+    }
+
+    // Détection iOS pour fullscreen
+    if (navigator.userAgent.match(/iPad|iPhone|iPod/)) {
+      document.documentElement.style.height = '100%';
+    }
+  </script>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
